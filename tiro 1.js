@@ -60,32 +60,21 @@ function draw() {
     if(keyDown("space")){
       shootBullet();
     }
-
+    
     if (blueBubbleGroup.collide(backBoard)){
       handleGameover(blueBubbleGroup);
     }
     if (redBubbleGroup.collide(backBoard)) {
       handleGameover(redBubbleGroup);
     }
-    if(blueBubbleGroup.(bulletGroup)){
-    handleBubbleCollision(blueBubbleGroup);
-    }
-
-    if(blueBubbleGroup.collide(bulletGroup)){
-    handleBubbleCollision();
-    }
-    
-    if(blueBubbleGroup.collide()){
-    handleBubbleCollision(blueBubbleGroup);
-    }
     
     if(blueBubbleGroup.collide(bulletGroup)){
-    handleBubbleCollision(blueBubbleGroup);
+      handleBubbleCollision(blueBubbleGroup);
     }
 
     if(redBubbleGroup.collide(bulletGroup)){
-    handleBubbleCollision(redBubbleGroup);
-    }
+      handleBubbleCollision(redBubbleGroup);
+    }  
 
     drawSprites();
   }
@@ -123,7 +112,6 @@ function handleBubbleCollision(bubbleGroup){
     if (life > 0) {
        score=score+1;
     }
-
  
     bulletGroup.destroyEach()
     bubbleGroup.destroyEach()
@@ -132,22 +120,10 @@ function handleBubbleCollision(bubbleGroup){
 function handleGameover(bubbleGroup){
   
     life=life-1;
-    bubbleGroup.destroyEach();
-
-     life=life+1;
-    bubbleGroup.destroyEach();
-
-     life=life-1;
-    bubbleGroup.destroy();
-
-     life=life-1;
-    bubble.destroyEach();
-    
+    bubbleGroup.destroyEach();   
 
     if (life === 0) {
-      gameState=2
-      
-     
+      gameState=2;  
     }
   
 }
